@@ -163,6 +163,46 @@
           }
         }
       }
+    },
+    "multicaja-pagination": {
+      "projectType": "library",
+      "root": "projects/multicaja-pagination",
+      "sourceRoot": "projects/multicaja-pagination/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/multicaja-pagination/tsconfig.lib.json",
+            "project": "projects/multicaja-pagination/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/multicaja-pagination/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/multicaja-pagination/src/test.ts",
+            "tsConfig": "projects/multicaja-pagination/tsconfig.spec.json",
+            "karmaConfig": "projects/multicaja-pagination/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/multicaja-pagination/tsconfig.lib.json",
+              "projects/multicaja-pagination/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "base-multicaja-test",
